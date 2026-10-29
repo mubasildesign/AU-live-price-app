@@ -1,0 +1,20 @@
+{
+  "name": "gold-silver-inr",
+  "version": "1.0.0",
+  "description": "Live gold and silver prices in Indian Rupees",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "node --watch backend/server.js",
+    "dev:web": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "NODE_ENV=production npm run build && node backend/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
